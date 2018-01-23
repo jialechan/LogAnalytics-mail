@@ -87,7 +87,7 @@ public class Runner {
                     isSend = true;
                     break;
                 }
-            } catch (EmailException e) {
+            } catch (IOException e) {
                 log.error("第" + (i + 1) + "发送邮件失败", e);
             }
         }

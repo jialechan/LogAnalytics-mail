@@ -5,7 +5,7 @@ mkdir /userdata1/server_script/
 cd /userdata1/server_script
 
 #获取代码
-git clone https://github.com/jialechan/logAnalytics-repo
+git clone https://github.com/jialechan/logAnalytics-mail-repo
 cd logAnalytics-repo/
 
 #根据具体配置
@@ -13,9 +13,6 @@ cp application.yml.template application.yml
 vim application.yml
 cp nginxConfig.sh.templat nginxConfig.sh
 vim nginxConfig.sh
-
-#给予运行权限
-chmod 700 LogAnalytics.jar jq LogAnalytics.sh log_daily.sh nginxConfig.sh
 
 #设置定时运行任务
 crontab -e
