@@ -12,7 +12,6 @@ public class MailConfig {
     private String uniqueCode;
     private String apiMailGateWay;
     private String mailTitle;
-    private String mailContent;
 
     public String getUniqueCode() {
         return uniqueCode;
@@ -38,11 +37,4 @@ public class MailConfig {
         this.mailTitle = mailTitle;
     }
 
-    public String getMailContent() {
-        return mailContent;
-    }
-
-    public void setMailContent(String mailContent) {
-        this.mailContent = mailContent;
-    }
 }
