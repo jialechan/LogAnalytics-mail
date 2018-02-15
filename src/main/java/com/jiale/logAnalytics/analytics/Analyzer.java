@@ -100,9 +100,12 @@ public class Analyzer {
     }
 
     private void addAccessCount(AnalyticsResult analyticsResult, LineInfo lineInfo) {
-        long accessCount = analyticsResult.getAccessResult().get(lineInfo.getTime()) == null ?
-                0L : analyticsResult.getAccessResult().get(lineInfo.getTime());
-        analyticsResult.getAccessResult().put(lineInfo.getTime(), accessCount + 1);
+        Long accessCount = analyticsResult.getAccessResult().get(lineInfo.getTime());
+        if(accessCount == null) {
+            log.error("在accessResult的Map里面没找到对应的时间点，这不应该发生才对: {}", lineInfo);
+        } else {
+            analyticsResult.getAccessResult().put(lineInfo.getTime(), accessCount + 1);
+        }
     }
 
     private void addHttpStatusCount(AnalyticsResult analyticsResult, LineInfo lineInfo) {

@@ -1,5 +1,7 @@
 package com.jiale.logAnalytics.analytics;
 
+import com.alibaba.fastjson.JSON;
+
 public class LineInfo {
 
     private String time;
@@ -39,4 +41,8 @@ public class LineInfo {
         this.uri = uri;
     }
 
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
 }
